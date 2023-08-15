@@ -1,0 +1,11 @@
+<div class="mx-auto w-50">
+<h1 class="text-center my-2">Edit the task "<%= @task.title %>"</h1>
+
+<%= form_with model: @task, class:"m-2" do |t| %>
+  <%= t.label :title, class:"form-label"%>
+  <%= t.text_field :title, class:"form-control" %>
+  <%= t.label :details, class:"form-label" %>
+  <%= t.text_area :details, class:"form-control" %>
+  <%= t.submit "Update", class:"btn btn-primary mt-2" %>
+<% end %>
+</div>

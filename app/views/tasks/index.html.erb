@@ -1,0 +1,22 @@
+<div class="m-2">
+  <h1>My tasks : </h1>
+  <ul class="list-group my-2">
+  <% @tasks.each do |task| %>
+    <li class="list-group-item w-25 p-2 d-flex justify-content-between">
+      <%= link_to task.title, task_path(task), class:"text-decoration-none" %>
+      <div>
+      <%= link_to (taskedit_path(task)),class: "text-decoration-none"  do %>
+        <i class="fa-regular fa-pen-to-square"></i>
+      <% end %>
+      <%= link_to (task_path(task)),class: "text-decoration-none text-danger",
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+          <i class="fa-solid fa-trash"></i>
+      <% end %>
+      </div>
+    </li>
+  <% end %>
+  </ul>
+  <div>
+    <%= link_to "Add new task +", tasknew_path, class: "btn btn-primary" %>
+  </div>
+</div>

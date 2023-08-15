@@ -1,0 +1,8 @@
+<div class="card my-2 mx-auto w-50 ">
+  <div class="card-body p-2">
+    <h2>Title: <%= @task.title%></h2>
+    <p>Details: <%= @task.details%></p>
+    <p>Completed: <%= @task.completed%></p>
+    <%= link_to "See all tasks", tasks_path, class: 'btn btn-outline-primary w-25' %>
+  </div>
+</div>
